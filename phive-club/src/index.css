@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Display font note:
+  This design assumes a heavy, condensed display face ("Monument Extended"
+  or "Integral CF") for all headings. Neither ships on Google Fonts —
+  license one and self-host, then add an @font-face block here and
+  reference it via a "font-display" Tailwind utility. Until then, every
+  heading uses font-black + tracking-tighter on Inter as a faithful
+  fallback (same weight, similar tight rhythm).
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+}
+
+/* Respect reduced-motion preferences: collapse Framer Motion's animated
+   transforms/opacity transitions to near-instant for anyone who has
+   this OS-level setting on. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
